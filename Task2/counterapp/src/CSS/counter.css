@@ -1,0 +1,15 @@
+.f {
+    display: flex;
+}
+.jc-c {
+    justify-content: center;
+}
+.ai-c {
+    align-items: center;
+}
+.fd-r {
+    flex-direction: row;
+}
+.fd-c {
+    flex-direction: column;
+}
