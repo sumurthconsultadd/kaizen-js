@@ -20,8 +20,12 @@ const Counter = () => {
       <div className="f jc-c ai-c fd-c">
         <h1>Value of Counter: {count}</h1>
         <div className="f jc-c ai-c fd-r">
-          <Button onClick={() => handleCounter("+")}>Increase</Button>
-          <Button onClick={() => handleCounter("-")}>Decrease</Button>
+          <Button disabled={showModal} onClick={() => handleCounter("+")}>
+            Increase
+          </Button>
+          <Button disabled={showModal} onClick={() => handleCounter("-")}>
+            Decrease
+          </Button>
         </div>
 
         <Modal
