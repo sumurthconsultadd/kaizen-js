@@ -1,0 +1,47 @@
+  .grid-outer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    gap: 40px;
+  }
+  
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .row {
+    display: flex;
+  }
+  
+  .cell {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    margin: 2px;
+  }
+  
+  .current-cell {
+    background-color: red;
+  }
+  
+  .button-container {
+    display: flex;
+    margin-top: 10px;
+  }
+  
+  button {
+    margin: 5px;
+  }
+  
+  .input-container {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px; 
+  }
+  
