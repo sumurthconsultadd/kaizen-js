@@ -45,7 +45,7 @@ const GridGame = () => {
     return () => {
       document.removeEventListener("keydown", handleKeyPress);
     };
-  }, [currentRow, currentCol, handleKeyPress]);
+  }, [handleKeyPress]);
 
   return (
     <div className="grid-outer">
