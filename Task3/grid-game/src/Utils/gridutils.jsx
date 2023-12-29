@@ -1,4 +1,6 @@
-export const optionsList = [];
+import { Select } from "antd";
+
+const optionsList = [];
 for (let i = 2; i <= 8; i++) {
   optionsList.push({
     value: i,
@@ -20,4 +22,23 @@ export const keyPressUtil = (e, callback) => {
   } else if (e.key === "ArrowRight") {
     callback("right");
   }
+};
+
+export const selectUtil = (type, rows, cols, handleResizeGrid) => {
+  return (
+    <div>
+      {type}:{" "}
+      <span>
+        <Select
+          options={optionsList}
+          defaultValue={5}
+          onChange={(value) =>
+            type === "Rows"
+              ? handleResizeGrid(value, cols)
+              : handleResizeGrid(rows, value)
+          }
+        />
+      </span>
+    </div>
+  );
 };

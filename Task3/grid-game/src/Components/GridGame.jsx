@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
-import { Button, Select } from "antd";
+import { Button } from "antd";
 import "../CSS/grid.css";
-import { handleInaction, keyPressUtil, optionsList } from "../Utils/gridutils";
+import { handleInaction, keyPressUtil, selectUtil } from "../Utils/gridutils";
 
 const GridGame = () => {
   const [numRows, setNumRows] = useState(5);
@@ -64,32 +64,15 @@ const GridGame = () => {
         ))}
       </div>
       <div className="button-container">
-        <Button onClick={() => handleArrowKey("up")}>Up</Button>
-        <Button onClick={() => handleArrowKey("down")}>Down</Button>
-        <Button onClick={() => handleArrowKey("left")}>Left</Button>
-        <Button onClick={() => handleArrowKey("right")}>Right</Button>
+        {["Up", "Down", "Left", "Right"].map((item) => (
+          <Button key={item} onClick={() => handleArrowKey(item.toLowerCase())}>
+            {item}
+          </Button>
+        ))}
       </div>
       <div className="input-container">
-        <div>
-          Rows:{" "}
-          <span>
-            <Select
-              options={optionsList}
-              defaultValue={5}
-              onChange={(value) => handleResizeGrid(value, numCols)}
-            />
-          </span>
-        </div>
-        <div>
-          Columns:{" "}
-          <span>
-            <Select
-              options={optionsList}
-              defaultValue={5}
-              onChange={(value) => handleResizeGrid(numRows, value)}
-            />
-          </span>
-        </div>
+        {selectUtil("Rows", numRows, numCols, handleResizeGrid)}
+        {selectUtil("Columns", numRows, numCols, handleResizeGrid)}
       </div>
     </div>
   );
