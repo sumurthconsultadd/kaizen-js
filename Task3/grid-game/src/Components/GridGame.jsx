@@ -71,8 +71,9 @@ const GridGame = () => {
         ))}
       </div>
       <div className="input-container">
-        {selectUtil("Rows", numRows, numCols, handleResizeGrid)}
-        {selectUtil("Columns", numRows, numCols, handleResizeGrid)}
+        {["Rows", "Cols"].map((item) =>
+          selectUtil(item, numRows, numCols, handleResizeGrid)
+        )}
       </div>
     </div>
   );
